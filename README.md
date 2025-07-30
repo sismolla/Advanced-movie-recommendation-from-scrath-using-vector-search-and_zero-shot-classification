@@ -1,56 +1,26 @@
 
 Goojara Scraper
-This is a Scrapy spider designed to scrape movie and series data from Goojara (ww1.goojara.to). It extracts information such as title, thumbnail, movie genre, release date, description, directors, and cast.
-
-Project Structure
-The provided image shows the project structure:
-
-The core logic for scraping Goojara resides in goojara.py within the Moviescrapr/Moviescrapr/spiders/ directory.
-
-Features
-Pagination Handling: Scrapes movie links across the first 200 pages of Goojara's movie listings.
-
-Detail Extraction: Navigates to individual movie/series pages to extract detailed information.
-
-Data Fields: Extracts the following data points for each movie/series:
-
-film_link: The URL of the movie/series page.
-`
-title: The title of the movie/series.
-
-thumbnail: The URL of the movie/series thumbnail image.
-
-movie_generic: The genre of the movie/series.
-
-release_date: The release date of the movie/series.
-
-description: A brief description of the movie/series.
-
-directors: The directors of the movie/series.
-
-cast: The main cast of the movie/series.
-
 Installation
 Clone the repository:
 
 Bash
 
-git clone [https://github.com/sismolla/Advanced-movie-recommendation-from-scrath-using-vector-search-and_zero-shot-classification/edit/main/README.md]
-cd your-repository-name
+    git clone https://github.com/sismolla/Advanced-movie-recommendation-from-scrath-using-vector-search-and_zero-shot-classification.git
+    cd your-repository-name
 Install Scrapy and other dependencies:
 It's recommended to use a virtual environment.
 
 Bash
 
-pip install -r requirements.txt
-(Ensure you have a requirements.txt file in your project root with Scrapy listed, or just pip install Scrapy directly if not.)
+    pip install -r requirements.txt
+    (Ensure you have a requirements.txt file in your project root with Scrapy listed, or just pip install Scrapy directly if not.)
 
 Usage
 To run the spider, navigate to the root directory of your Scrapy project (the directory containing scrapy.cfg) and execute the following command:
 
 Bash
 
-scrapy crawl goojara -o goojara_data.json
+    scrapy crawl goojara -o goojara_data.json
 This command will:
 
 Start the goojara spider.
@@ -61,19 +31,19 @@ You can change the output format (e.g., CSV, XML) by changing the file extension
 
 Bash
 
-scrapy crawl goojara -o goojara_data.csv
-Code Explanation
-goojara.py
-Python
-
-import scrapy
-
-class GoojaraSpider(scrapy.Spider):
-    name = "goojara"
-    allowed_domains = ["ww1.goojara.to"]
-    start_urls = (
-        [f"https://ww1.goojara.to/watch-movies?p={i}" for i in range(1, 200)]
-    )
+    scrapy crawl goojara -o goojara_data.csv
+    Code Explanation
+    goojara.py
+    Python
+    
+    import scrapy
+    
+    class GoojaraSpider(scrapy.Spider):
+        name = "goojara"
+        allowed_domains = ["ww1.goojara.to"]
+        start_urls = (
+            [f"https://ww1.goojara.to/watch-movies?p={i}" for i in range(1, 200)]
+        )
 
     def parse(self, response):
         # This is the list page: get links to individual movies/series
