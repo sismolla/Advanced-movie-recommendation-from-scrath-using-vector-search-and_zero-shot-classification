@@ -5,23 +5,6 @@ This is a Scrapy spider designed to scrape movie and series data from Goojara (w
 Project Structure
 The provided image shows the project structure:
 
-.
-├── upwork-scrapin...
-│   └── Moviescrapr
-│       ├── .scrapy
-│       └── Moviescrapr
-│           ├── __pycache__
-│           ├── spiders
-│           │   ├── __pycache__
-│           │   ├── __init__.py
-│           │   └── goojara.py  <-- The spider
-│           ├── __init__.py
-│           ├── items.py
-│           ├── mid (C:\Users\HP\Des\folder\Moviescrapr)
-│           ├── pipe
-│           └── settings.py
-├── requirements.txt
-└── scrapy.cfg
 The core logic for scraping Goojara resides in goojara.py within the Moviescrapr/Moviescrapr/spiders/ directory.
 
 Features
@@ -32,7 +15,7 @@ Detail Extraction: Navigates to individual movie/series pages to extract detaile
 Data Fields: Extracts the following data points for each movie/series:
 
 film_link: The URL of the movie/series page.
-
+`
 title: The title of the movie/series.
 
 thumbnail: The URL of the movie/series thumbnail image.
@@ -52,15 +35,13 @@ Clone the repository:
 
 Bash
 
-git clone https://github.com/your-username/your-repository-name.git
+git clone [https://github.com/sismolla/Advanced-movie-recommendation-from-scrath-using-vector-search-and_zero-shot-classification/edit/main/README.md]
 cd your-repository-name
 Install Scrapy and other dependencies:
 It's recommended to use a virtual environment.
 
 Bash
 
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 (Ensure you have a requirements.txt file in your project root with Scrapy listed, or just pip install Scrapy directly if not.)
 
