@@ -51,7 +51,7 @@ Splits multi-label genres into lists
 
 Maps / extracts main genres
 ```bash
-python data_cleaning.py
+python data_cleaning.ipynb
 Output: clean_movies.json or .csv – clean dataset ready for NLP.
 ```
 🧠 Step 3 – Vector Search & Enrichment
